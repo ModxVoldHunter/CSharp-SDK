@@ -1,0 +1,40 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
+namespace System;
+
+public abstract class FormattableString : IFormattable
+{
+	[StringSyntax("CompositeFormat")]
+	public abstract string Format { get; }
+
+	public abstract int ArgumentCount { get; }
+
+	public abstract object?[] GetArguments();
+
+	public abstract object? GetArgument(int index);
+
+	public abstract string ToString(IFormatProvider? formatProvider);
+
+	string IFormattable.ToString(string ignored, IFormatProvider formatProvider)
+	{
+		return ToString(formatProvider);
+	}
+
+	public static string Invariant(FormattableString formattable)
+	{
+		ArgumentNullException.ThrowIfNull(formattable, "formattable");
+		return formattable.ToString(CultureInfo.InvariantCulture);
+	}
+
+	public static string CurrentCulture(FormattableString formattable)
+	{
+		ArgumentNullException.ThrowIfNull(formattable, "formattable");
+		return formattable.ToString(CultureInfo.CurrentCulture);
+	}
+
+	public override string ToString()
+	{
+		return ToString(CultureInfo.CurrentCulture);
+	}
+}

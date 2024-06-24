@@ -1,0 +1,13 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
+
+namespace System.Transactions.DtcProxyShim.DtcInterfaces;
+
+[GeneratedComInterface]
+[Guid("82DC88E0-A954-11d1-8F88-00600895E7D5")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[IUnknownDerived<_003CSystem_Transactions_DtcProxyShim_DtcInterfaces_ITransactionPhase0Factory_003EF598D63675941E90FDBEEA20418F5746B137ECF9275E8FAC9E6E010FECC67077E__InterfaceInformation, _003CSystem_Transactions_DtcProxyShim_DtcInterfaces_ITransactionPhase0Factory_003EF598D63675941E90FDBEEA20418F5746B137ECF9275E8FAC9E6E010FECC67077E__InterfaceImplementation>]
+internal interface ITransactionPhase0Factory
+{
+	void Create([MarshalAs(UnmanagedType.Interface)] ITransactionPhase0NotifyAsync pITransactionPhase0Notify, [MarshalAs(UnmanagedType.Interface)] out ITransactionPhase0EnlistmentAsync ppITransactionPhase0Enlistment);
+}

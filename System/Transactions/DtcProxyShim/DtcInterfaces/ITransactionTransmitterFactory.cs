@@ -1,0 +1,13 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
+
+namespace System.Transactions.DtcProxyShim.DtcInterfaces;
+
+[GeneratedComInterface]
+[Guid("59313E00-B36C-11cf-A539-00AA006887C3")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[IUnknownDerived<_003CSystem_Transactions_DtcProxyShim_DtcInterfaces_ITransactionTransmitterFactory_003EF85954682BE572A3B0369C02761724A91164CB06D12DD111F50CE9F897AE6E1B6__InterfaceInformation, _003CSystem_Transactions_DtcProxyShim_DtcInterfaces_ITransactionTransmitterFactory_003EF85954682BE572A3B0369C02761724A91164CB06D12DD111F50CE9F897AE6E1B6__InterfaceImplementation>]
+internal interface ITransactionTransmitterFactory
+{
+	void Create([MarshalAs(UnmanagedType.Interface)] out ITransactionTransmitter pTxTransmitter);
+}

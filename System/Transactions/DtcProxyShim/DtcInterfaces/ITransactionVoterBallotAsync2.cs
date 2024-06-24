@@ -1,0 +1,13 @@
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
+
+namespace System.Transactions.DtcProxyShim.DtcInterfaces;
+
+[GeneratedComInterface]
+[Guid("5433376C-414D-11d3-B206-00C04FC2F3EF")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[IUnknownDerived<_003CSystem_Transactions_DtcProxyShim_DtcInterfaces_ITransactionVoterBallotAsync2_003EF6D82B2D933B8ED98A45C93041019D9D0B181742ECB00DFB99ADD1328AD13EFE0__InterfaceInformation, _003CSystem_Transactions_DtcProxyShim_DtcInterfaces_ITransactionVoterBallotAsync2_003EF6D82B2D933B8ED98A45C93041019D9D0B181742ECB00DFB99ADD1328AD13EFE0__InterfaceImplementation>]
+internal interface ITransactionVoterBallotAsync2
+{
+	void VoteRequestDone(int hr, nint pboidReason);
+}
